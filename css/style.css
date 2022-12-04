@@ -1,0 +1,728 @@
+/* 
+    Author: Mouignidaho Issa Ben Said;
+    Theme: Restaurant Food Order;
+    version: 1.0;
+*/
+
+/* CSS for All */
+
+*{
+    margin: 0 0;
+    padding: 0 0;
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+}
+.container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 1%;
+}
+.img-responsive{
+    width: 100%;
+}
+.img-curve{
+    border-radius: 15px;
+}
+
+.text-right{
+    text-align: right;
+}
+.text-center{
+    text-align: center;
+}
+.text-left{
+    text-align: left;
+}
+.text-white{
+    color: white;
+}
+.text-black{
+    color: black;
+}
+
+.clearfix{
+    clear: both;
+    float: none;
+}
+
+a{
+    color: orangered;
+    text-decoration: none;
+}
+a:hover{
+    color: orange;
+}
+
+#Mylink{
+    color: black;
+    padding: 10px;
+    border-radius: 20px;
+    background-color: orangered;
+}
+#Mylink:hover{
+    background-color: orange;
+}
+
+.btn{
+    padding: 1%;
+    border: none;
+    font-size: 1rem;
+    border-radius: 5px;
+}
+.btn-primary{
+    background-color: orange; /*  */
+    color: white;
+    cursor: pointer;
+}
+.btn-primary:hover{
+    color: white;
+    background-color: orangered;
+}
+h2{
+    color: #2f3542;
+    font-size: 2rem;
+    margin-bottom: 2%;
+}
+h3{
+    font-size: 1.5rem;
+}
+.float-container{
+    position: relative;
+}
+.float-text{
+    position: absolute;
+    bottom: 50px;
+    left: 40%;
+}
+fieldset{
+    border: 1px solid white;
+    margin: 5%;
+    padding: 3%;
+    border-radius: 5px;
+}
+
+.success{
+    padding: 2%;
+    background-color: springgreen;
+    color: black;
+    border-radius: 5px;
+}
+
+.error{
+    padding: 2%;
+    background-color: #ff4757; 
+    color: black;
+    border-radius: 5px;
+}
+
+.orangered{
+    background-color: orangered;
+}
+
+.orange{
+    background-color: orange;
+}
+
+.blue{ 
+    background-color: blue;
+    padding: 2%;
+}
+.yellow{ 
+    background-color: yellow;
+    padding: 2%;
+}
+.green{
+    background-color: green;
+    padding: 2%;
+}
+
+#anim h1{ 
+    width: 460px;
+    height: 40px;
+    background: orange;
+    animation-name: hello;
+    animation-duration: 5s;
+}
+
+@keyframes hello {
+  from {background-color: orangered;}
+  to {background-color: yellow;}
+}
+
+#div-cat {
+
+  width: 200px;
+  height: 180px;
+
+/*  background: red;*/
+  transition: width 1s, height 1s;
+  transition-timing-function: linear;
+}
+
+/*
+#divn{
+    transition-timing-function: linear;
+}
+*/
+
+#div-cat:hover {
+  width: 240px;
+  height: 200px;
+}
+
+/* Responsive Grid-View */
+/*
+.col-1 {width: 8.33%;}
+.col-2 {width: 16.66%;}
+.col-3 {width: 25%;}
+.col-4 {width: 33.33%;}
+.col-5 {width: 41.66%;}
+.col-6 {width: 50%;}
+.col-7 {width: 58.33%;}
+.col-8 {width: 66.66%;}
+.col-9 {width: 75%;}
+.col-10 {width: 83.33%;}
+.col-11 {width: 91.66%;}
+.col-12 {width: 100%;}
+*/
+
+/*All these columns should be floating to the left, and have a padding of 15px:*/
+/*
+[class*="col-"] {
+  float: left;
+  padding: 15px;
+  border: 1px solid red;
+}
+*/
+
+/*INDEX PAGE*/
+
+/* CSS for navbar section */
+
+.logo{
+    width: 15%;
+    float: left;
+    margin-top: 1%;
+}
+.menu{
+    line-height: 60px;
+}
+.menu ul{
+    list-style-type: none;
+}
+.menu ul li{
+    display: inline;
+    padding: 1%;
+    font-weight: bold;
+}
+
+
+/* Add a black background color to the top navigation */
+.topnav { 
+  background-color: #333;
+  overflow: hidden;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+    
+  -webkit-transition-duration: 0.5s; /* Safari */
+  transition-duration: 0.5s;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+  background-color: orangered;
+  color: black;
+}
+
+/* Hide the link that should open and close the topnav on small screens */
+.topnav i {
+  display: none;
+}
+
+/* Add an active class to highlight the current page */
+/*
+.topnav a.active { 
+  background-color: orange;
+  color: white;
+}
+*/
+
+/* Hide the link that should open and close the topnav on small screens */
+/*
+.topnav .icon {
+  display: none;
+}
+*/
+
+/*
+.nav-link{
+    background-color: #333;
+}
+.nav-link :active{
+    background-color: orange;
+    color: white;
+}
+*/
+
+/* CSS for Food SEarch Section */
+
+.food-search{
+    background-image: url(../images/hero-bg.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 7% 0;
+}
+
+.food-search input[type="search"]{
+    width: 50%;
+    padding: 1%;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+}
+
+
+/* CSS for Categories */
+.categories{
+    padding: 4% 0;
+    position: relative;
+}
+
+.box-3{ 
+    width: 28%;
+    float: left;
+    margin: 2%;
+}
+
+.box-4{
+    width: 28%;
+    float: left;
+    margin: 4%;
+}
+
+/* CSS for Food Menu */
+.food-menu{
+    background-color: #ececec;
+    padding: 4% 0;
+}
+
+.food-menu-box{
+    width: 43%;
+    margin: 1%;
+    padding: 2%;
+    float: left;
+    background-color: white;
+    border-radius: 15px;
+}
+
+.food-menu-img{
+    width: 20%;
+    float: left;
+}
+.food-price{
+    font-size: 1.2rem;
+    margin: 2% 0;
+}
+.food-detail{
+    font-size: 1rem;
+    color: #747d8c;
+}
+
+.categories h3{
+    padding: 2% 4%;
+    border: none;
+    border-radius: 25px;
+    background-color: black;
+    color: white;
+    font-size: 1rem;
+}
+.alignement{
+    position: absolute;
+    top: 40%;
+    left: 40%;
+    height: 12%;
+}
+
+
+/* CSS for Order */
+
+.order-container { 
+    width: 60%;
+    height: 100%;
+    margin-left: 20%;
+    margin-right: 20%;
+    border: 1px solid white;
+    padding: 3%;
+    border-radius: 5px;
+} 
+
+.container2 { 
+/*  background-color: #f2f2f2;*/
+  display: flex; 
+  flex-direction: row;
+  padding: 15px 0 15px 0; 
+  border: 1px solid lightgrey;
+  border-radius: 6px;
+}
+
+.container3 {  
+/*  background-color: #f2f2f2;*/
+  display: flex; 
+  flex-direction: column;
+  padding: 5px 20px 15px 20px; 
+  
+}
+ 
+.container4 {  
+  display: flex; 
+  flex-wrap: wrap;
+/*  padding: 5px 20px 15px 20px; */
+  
+}
+ 
+.row { 
+  display: -ms-flexbox; /* IE10 */
+  display: flex;
+  -ms-flex-wrap: wrap; /* IE10 */
+  flex-wrap: wrap;
+  margin: 0 -16px; 
+}
+
+.col-25 {
+  -ms-flex: 25%; /* IE10 */
+  flex: 25%;
+}
+
+.col-50 {
+  -ms-flex: 50%; /* IE10 */
+  flex: 50%;
+}
+
+.col-75 {
+  -ms-flex: 75%; /* IE10 */
+  flex: 75%;
+}
+
+.col-25,
+.col-50,
+.col-75 {
+  padding: 0 16px;
+}
+
+
+input[type=text] {
+  width: 96%;
+  margin-bottom: 20px;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+label {
+  margin-bottom: 10px;
+  display: block;
+}
+
+.icon-container {
+  margin-bottom: 20px;
+  padding: 7px 0;
+  font-size: 24px;
+}
+
+.btn {
+  background-color: orangered;
+  color: white;
+  padding: 12px;
+  margin: 10px 0;
+  border: none;
+  width: 100%;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 17px;
+} 
+
+.btn:hover {
+  background-color: orange;
+}
+
+#submit{
+    padding: 12px;
+    width: 20%;
+}
+
+span.price {
+  float: right;
+  color: grey;
+}
+
+.food-add{
+    width: 80%;
+    height: 60%;
+    margin-left: 0;
+/*    background-color: green;*/
+}
+
+.food-order-img { 
+    width: 40%;
+    float: left;
+    margin-left: 0;
+/*    background-color: blue;*/
+}
+
+.food-order-desc {
+    width: 80%;
+    margin-left: 20%;
+    padding: 3%;
+/*    background-color: yellow;*/
+} 
+
+.transbox1{  
+    background-color: #333;
+    border: 1px solid black;
+    opacity: 0.99;
+}
+
+.transbox2{ 
+    background-color: orange;
+    border: 1px solid black;
+    opacity: 0.5;
+}
+
+
+/* CSS for table */
+
+section table {
+  border-collapse: collapse;
+} 
+ 
+section table, th, td { 
+  border: 1px solid black;
+} 
+
+/* CSS for Social */
+
+.social ul{
+    list-style-type: none;
+}
+.social ul li{
+    display: inline;
+    padding: 1%;
+}
+
+/* for Order Section */
+.order{
+    width: 50%;
+    margin: 0 auto;
+}
+.input-responsive{
+    width: 96%;
+    padding: 1%;
+    margin-bottom: 3%;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+.order-label{
+    margin-bottom: 1%; 
+    font-weight: bold;
+}
+
+/* CSS for register */
+
+.register{
+    width: 50%;
+    margin: 0 auto;
+}
+.input-register{
+    width: 96%;
+    padding: 1%;
+    margin-bottom: 3%;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+#mybtn{
+    margin: 3% 40%;
+    padding: 3%;
+    color: black;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+/* ACCOUNT.PHP */
+
+/* Style the tab */
+.tab {
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background-color: #f1f1f1;
+}
+
+/* Style the buttons that are used to open the tab content */
+.tab button {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+  background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-top: none;
+}
+
+
+/* CSS for Mobile Size or Smaller Screen */
+
+@media screen and (max-width:600px){
+    
+    .logo{
+        width: 80%;
+        float: none;
+        margin: 1% auto;
+    }
+
+    .menu ul{
+        text-align: center;
+    }
+
+    .food-search input[type="search"]{
+        width: 90%;
+        padding: 2%;
+        margin-bottom: 3%;
+    }
+
+/*
+    .btn{ 
+        width: 91%;
+        padding: 2%;
+    }
+*/
+    
+    #mybtn2{ 
+        margin: 1% auto;
+        padding: 2%;
+        color: black;
+        font-size: 1rem;
+        font-weight: bold;
+    }
+
+    .food-search{
+        padding: 10% 0;
+    }
+
+    .food-search .search-container { 
+        float: right;
+        position: absolute;
+        margin-left: 10%;
+    }
+    
+    .food-search .search-container input {
+        position: relative;
+        bottom: 40px;
+        width: 100%;
+        cursor: pointer;
+    }
+    
+    #submit{
+        padding: 1%;
+        width: 100%;
+        cursor: pointer;
+        margin-bottom: 6%;
+    }
+    
+    .categories{
+        padding: 20% 0;
+/*        position: absolute;*/
+    }
+    h2{
+        margin-bottom: 10%;
+    }
+    
+    .categories .container{
+        display: flex; 
+        flex-direction: column;
+    }
+    
+    .box-3{ 
+        width: 100%;
+        margin: 20% auto;
+/*
+        position: relative;
+        margin-left: 10%;
+*/
+    }
+
+    .food-menu{
+        padding: 20% 0;
+    }
+
+    .food-menu-box{
+        width: 90%;
+        padding: 5%;
+        margin-bottom: 5%;
+    }
+    .social{
+        padding: 5% 0;
+    }
+    .order{
+        width: 100%;
+    }
+    
+    #anim h1{
+        width: 96%;
+        padding: 1%;
+        margin-bottom: 3%;
+        font-size: 1rem;
+    }
+}
+
+@media screen and (max-width:600px){
+    .topnav li:not(:first-child) {display: none;}
+    .topnav li:last-child {
+        float: right;
+        display: block;
+      }
+}
+
+@media screen and (max-width: 600px) {
+  .topnav.responsive {position: relative;}
+  .topnav.responsive .icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .topnav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+  .menu{
+      line-height: 30px;
+  }
+}
