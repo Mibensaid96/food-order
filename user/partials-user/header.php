@@ -64,7 +64,7 @@
                             <a class="nav-link" href="<?php echo SITEURL; ?>user/user-account.php">Account</a>
                         </li>
                         <li class=" ">
-                            <a class="nav-link" href="#">Contact</a>
+                            <a class="nav-link" href="<?php echo SITEURL; ?>user/user-contact.php">Contact</a>
                         </li>
                         <li class=" "> <!-- class="nav-item "-->
                             <a class="nav-link" href="javascript:void(0);" class="icon" onclick="myFunction()">

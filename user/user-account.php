@@ -164,17 +164,6 @@ require_once 'partials-user/header.php';
                         <label for="">Pseudo</label>
                         <input type="text" placeholder="<?= $_SESSION['auth']['username']; ?>" name="username" class="input-register" />
                     </div>
-<!--
-                    
-                    <div class="order-label">
-                        <label for="">First Name</label>
-                        <input type="text" name="firstname" class="input-register" />
-                    </div>
-                    <div class="order-label">
-                        <label for="">Last Name</label>
-                        <input type="text" name="lastname" class="input-register" />
-                    </div>
--->
 
                     <div class="order-label">
                         <label for="">Address</label>
@@ -188,18 +177,11 @@ require_once 'partials-user/header.php';
 
                     <div class="order-label">
                         <label for="">Phone number</label>
-                        <input type="tel" placeholder="<?= $_SESSION['auth']['phone']; ?>" name="username" class="input-register" />
+                        <input type="tel" placeholder="<?= $_SESSION['auth']['phone']; ?>" name="phone" class="input-register" />
                     </div>
 
-<!--
                     <div class="order-label">
-                        <label for="">Date of birthday</label>
-                        <input type="date" name="username" class="input-register" />
-                    </div>
--->
-                    
-                    <div class="order-label">
-                        <input class="btn" type="submit" name="submit" value="UPDATE">
+                        <input class="btn" type="submit" name="update" value="UPDATE">
                    </div>
                     
                 <?php //} ?>
@@ -209,6 +191,7 @@ require_once 'partials-user/header.php';
                 <div class="col-25">
                     <h4>Changement de mot de passe: </h4>
                     <br><br>
+
                 <form action="" method="POST">
                     
                     <div class="form-group">
@@ -228,7 +211,39 @@ require_once 'partials-user/header.php';
                     
                 </form>
                 </div>
+                <?php
+                if (isset($_POST['update'])) {
+	                $username = !empty($_POST['username']) ? $_POST['username'] : $_SESSION['auth']['username']; // si username est defini on prend la val sinon on garde la val actuelle 
+	                $address = !empty($_POST['address']) ? $_POST['address'] : $_SESSION['auth']['user_address'];
+	                $email =  !empty($_POST['email']) ? $_POST['email'] : $_SESSION['auth']['email'];
+	                $phone =  !empty($_POST['phone']) ? $_POST['phone'] : $_SESSION['auth']['phone'];
+                    $user_id = $_SESSION['auth']['id']; 
+
+                    $sql2 = $conn->prepare("UPDATE tbl_users SET 
+                                            username = ?, phone = ?, email = ?, user_address = ?
+                                            WHERE id = ?
+                                           "); 
+
+                    $sql2->bind_param("ssssi",$username, $phone, $email, $address, $user_id);
+                    $sql2->execute();
+
+                    $_SESSION['flash']['success'] = "<div class='col-3 success'>Vos Informations personnelles sont mises a jour.</div>";
+                    header("location: user-account.php");  
+                    exit();
+                } elseif (isset($_POST['submit']) && $_POST['password'] == $_POST['password_confirm']) {
+	                $password = password_hash($_POST['password'], PASSWORD_BCRYPT);
+
+                    $sql3 = $conn->prepare("UPDATE tbl_users SET password = ? WHERE id = ?"); 
+                    
+                    $sql3->bind_param("si",$password, $user_id);
+                    $sql3->execute();
+
+                    $_SESSION['flash']['success'] = "<div class='col-3 success'>Votre mot de passe a ete mise a jour.</div>";
+                    header("location: user-account.php"); 
+                    exit();
+                }
                 
+                ?>
                 
             </div>
             

@@ -61,7 +61,9 @@
                         </li>
                         
                         <?php endif; ?>
-                        
+                        <li class=" ">
+                            <a id="Contact" class="nav-link" href="<?php echo SITEURL; ?>user/user-contact.php">Contact</a>
+                        </li>
                         <li class=" "> 
                             <a class="nav-link" href="javascript:void(0);" class="icon" onclick="myFunction()">
                                 <i class="fa fa-bars"></i>
@@ -76,3 +78,16 @@
         </div>
     </section>
     <!-- Navbar Section Ends Here -->
+
+    
+    <!-- Messages Flash Here -->
+    <div class="container">
+        <?php if(isset($_SESSION['flash'])): ?>
+            <?php foreach($_SESSION['flash'] as $type => $message): ?>
+                <div class="alert <?= $type; ?>">
+                    <?= $message; ?>
+            <?php endforeach; ?>
+            <?php unset($_SESSION['flash']); ?>
+        <?php endif; ?>
+    </div>
+    <!-- Messages Flash Here -->

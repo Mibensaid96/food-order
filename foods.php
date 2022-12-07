@@ -85,6 +85,7 @@
                         <input type="hidden" name="product_quantity" value="1"/>
                         <button type="submit" name="add_to_order"  class="btn btn-primary">Order Now</button>
                     </form>
+                    
                 </div>
             </div>
 

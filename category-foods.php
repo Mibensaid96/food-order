@@ -89,7 +89,16 @@ if (isset($_GET['category_id'])) {
                     </p>
                     <br>
 
-                    <a href="<?php echo SITEURL; ?>order.php?food_id=<?php echo $id; ?>" class="btn btn-primary">Order Now</a>
+                    <form method="POST" action="order.php">
+                        <input type="hidden" name="product_id" value="<?php echo $id; ?>"/>
+                        <input type="hidden" name="product_name" value="<?php echo $title; ?>"/>
+                        <input type="hidden" name="product_price" value="<?php echo $price; ?>">
+                        <!-- <input type="hidden" name="product_special_offer" value="<?php echo $product['product_special_offer']; ?>"/> -->
+                        <input type="hidden" name="product_image" value="<?php echo $image_name; ?>"/>
+                        <input type="hidden" name="product_quantity" value="1"/>
+                        <button type="submit" name="add_to_order"  class="btn btn-primary">Order Now</button>
+                    </form>
+                    
                 </div>
             </div>
 
